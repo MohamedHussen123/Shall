@@ -1,30 +1,29 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <!-- popUp for all website -->
+  <v-layout class="w-100">
+    <v-main>
+      <slot></slot>
+      <PopupComp />
+      <router-view />
+    </v-main>
+  </v-layout>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script setup>
+import PopupComp from "@/components/popUp/PopupComp";
+</script>
+<style>
+body {
+  background-color: #f9f9f9 !important;
+  direction: rtl;
 }
+.container {
+  max-width: 1140px !important;
+}
+* {
+  direction: rtl;
+  line-height: normal !important;
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+  /* font-family: "ArbFONTS-cocon-next-arabic", sans-serif !important; */
 }
 </style>
